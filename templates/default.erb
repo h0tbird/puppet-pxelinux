@@ -1,6 +1,6 @@
-default menu.c32
-prompt 0
-timeout 100
+DEFAULT menu.c32
+PROMPT 0
+TIMEOUT 100
 ONTIMEOUT local
 
 MENU TITLE Main Menu
@@ -8,3 +8,9 @@ MENU TITLE Main Menu
 LABEL local
   MENU LABEL Boot local hard drive
   LOCALBOOT 0
+
+LABEL install
+  MENU LABEL CentOS 7 unattended installation
+  KERNEL images/centos/7/x86/vmlinuz
+  APPEND initrd=images/centos/7/initrd.img ks=http://1.2.3.4/install.ks text
+
