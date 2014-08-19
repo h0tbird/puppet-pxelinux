@@ -2,6 +2,13 @@ class pxelinux::config inherits pxelinux {
 
   file {
 
+    '/tftpboot/images':
+      ensure  => directory,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0755',
+      require => Package['syslinux-tftpboot'];
+
     '/tftpboot/pxelinux.cfg':
       ensure  => directory,
       owner   => 'root',
