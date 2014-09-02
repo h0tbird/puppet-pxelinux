@@ -2,7 +2,7 @@ class pxelinux::config inherits pxelinux {
 
   file { '/tftpboot/pxelinux.cfg':
     ensure  => directory,
-    source  => "puppet:///${module_name}/pxelinux.cfg",
+    source  => "puppet:///modules/${module_name}/pxelinux.cfg",
     recurse => true,
     owner   => 'root',
     group   => 'root',
